@@ -8,7 +8,7 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'wg = wwngrimoire.__init__:main'
+            'wg = wwngrimoire.__init__:enter'
         ]
     }
 )
