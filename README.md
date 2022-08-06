@@ -7,7 +7,7 @@ I will include some of my dm's broken homebrew as well
 
 The backend will be a python flask server
 
-The frontend will be node.js.
+The frontend will be react.js.
 
 There will be a nonjs version for the privacy lovers out there.
 Way less feature packed though.
