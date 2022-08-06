@@ -11,3 +11,8 @@ The frontend will be react.js.
 
 There will be a nonjs version for the privacy lovers out there.
 Way less feature packed though.
+
+## TODO
+
+Maybe use async flask?????  
+`pip install "Flask[async]"`
