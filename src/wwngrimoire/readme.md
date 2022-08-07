@@ -40,15 +40,22 @@ and generate a single json file based off of a specifically
 formatted text file name and structure.
 
 The text file must be named as so:  
-`spell_name_here_#.txt`
+`spell_name_here.txt`
 
 `spell_name_here` would be the spell name with the words of the spell split by
-an underscore. `#` is the level of the spell.
+an underscore.
 
 For example:
-`The_Howl_of_Light_3.txt`
+`The_Howl_of_Light.txt`
 
-Python knows the spell is named `The Howl of Light` and that the spell's level is `3`.
+Python knows the spell is named `The Howl of Light`.
+
+### Inside the text file
+
+The text file should be organized in a specific way
+- The first line should be the spells level
+- The second line should be the spells class
+- The rest of the lines are the spells description
 
 Inside the text file, copy and paste the spell's description. Might be worth it
 to pretty up the description slightly so there's not too much weird formatting.
