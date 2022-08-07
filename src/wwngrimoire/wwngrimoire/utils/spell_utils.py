@@ -44,9 +44,7 @@ def generate_json(
 
         final_level = int(spell_description[0])
         final_tradition = spell_description[1].rstrip()  # get rid of trailing /n
-        final_description = "".join(
-            spell_description[2:]
-        )  # Thinking about getting rid of the newline characters
+        final_description = "".join(spell_description[2:]).replace("\n", " ")
 
         final_json[final_name] = {
             "level": final_level,
