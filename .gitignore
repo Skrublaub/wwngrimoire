@@ -1,2 +1,5 @@
 # pip generated files
 wwngrimoire.egg-info/
+
+# log files
+wwn_log.log
