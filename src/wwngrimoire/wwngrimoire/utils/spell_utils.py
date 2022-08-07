@@ -19,7 +19,8 @@ def generate_json(
     Args:
         directory (Path | str): Directory to examine the txt files in
             and place the output json in
-        write_json (bool): Whether to write json to disk or not
+        write_json (bool): Whether to write json to disk or not in
+            directory
 
     Returns:
         dict[Any]: The json of all
@@ -33,26 +34,21 @@ def generate_json(
     for txt_file in txt_files:
         final_description: str = ""
         spell_description: list[str] = []
-        spell_name: str = txt_file.stem  # The_Howl_of_Light_3
-        spell_parts: list[str] = spell_name.split(
-            "_"
-        )  # ['The', 'Howl', 'of', 'light', '3']
+        final_level: int = -1
+        final_tradition: str = ""
 
-        spell_level = spell_parts[-1]  # '3' notice it's a string
-        if not spell_level.isnumeric():
-            logger.info(f"############### No level found: {txt_file}")
-            continue  # Skip if not numeric
-
-        final_name: str = " ".join(spell_parts[:-1])  # The
-        final_level: int = int(spell_level)
+        final_name: str = txt_file.stem.replace("_", " ")
 
         with txt_file.open("r") as open_file:
             spell_description = open_file.readlines()
 
-        final_description = "".join(spell_description)
+        final_level = int(spell_description[0])
+        final_tradition = spell_description[1].rstrip()  # get rid of trailing /n
+        final_description = "".join(spell_description[2:])  # Thinking about getting rid of the newline characters
 
         final_json[final_name] = {
             "level": final_level,
+            "tradition": final_tradition,
             "description": final_description,
         }
 
