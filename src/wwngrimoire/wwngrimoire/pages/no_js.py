@@ -14,4 +14,4 @@ def home_page():
 
 @no_js_bp.route("/nojs")
 def no_js_home_page():
-    return render_template('home.html')
+    return render_template("home.html")
