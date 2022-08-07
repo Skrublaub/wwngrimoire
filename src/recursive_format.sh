@@ -8,5 +8,7 @@ conda activate wwn
 # runs black on them individually
 # {} + won't work if over 50 files found
 find . -regex .*.py -exec black {} \;
+find . -regex .*.html -exec npx prettier -w {} \;
+find . -regex .*.js -exec npx prettier -w {} \;
 
 # I don't want to use pre-commit
