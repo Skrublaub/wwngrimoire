@@ -25,3 +25,6 @@ Way less feature packed though.
 
 Maybe use async flask?????  
 `pip install "Flask[async]"`
+
+Use an SQL database over a .json file??  
+Probably a better idea
