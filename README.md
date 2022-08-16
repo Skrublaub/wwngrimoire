@@ -30,4 +30,5 @@ Use an SQL database over a .json file??
 Probably a better idea
 
 Implement javascript and maybe don't use react
-because html is powerful????????
+because html is powerful???????? Will still need
+some javascript though :/ :/ :/
