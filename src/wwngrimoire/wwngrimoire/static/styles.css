@@ -1,9 +1,14 @@
-body {
-    background-color: Purple;
+header {
+    text-align: center;
+    color: red;
 }
-h1 {
-    color: olivedrab;
+button {
+    border: black;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
 }
-p {
-    color: aqua;
+.search_div {
+    text-align: center;
 }
