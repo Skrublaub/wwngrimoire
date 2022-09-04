@@ -34,7 +34,8 @@ def generate_json() -> None:
 @app.route("/")
 @app.route("/home")
 def home_page():
-    no_js_url: url_for = url_for("no_js.no_js_home_page")
+    #no_js_url: url_for = url_for("no_js.no_js_home_page")
+    no_js_url: url_for = url_for("no_js.search_no_parameter")
     return redirect(no_js_url)
 
 
