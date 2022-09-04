@@ -63,7 +63,7 @@ def no_js_search(query: str):
     return render_template("search.html")
 
 
-def _search_json(query: str) -> dict[Any]:
+def _search_json(query: str) -> str:
     """
     Helper for the two search functions that can handle the empty
     search parameter and the filled one
@@ -72,10 +72,19 @@ def _search_json(query: str) -> dict[Any]:
         query (str): The spell to search for. Can be empty
 
     Returns:
-        dict[Any]: Json containing the matching spell information.
+        str: html str that can be rendered in the search queries
     """
     spell_json: dict[Any] = {}
+    matching_spells: dict[Any] = {}
 
     with SPELLS_JSON_PATH.open("r") as spells_file:
         spell_json = json.load(spells_file)
 
+    if not query:
+        matching_spells = spell_json
+    else:  # obtain matching spells
+        for spell_name, attributes in spell_json:
+            if query in spell_name:
+                matching_spells[spell_name] = attributes
+
+    pass
